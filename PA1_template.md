@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -35,7 +40,7 @@ daily.totals <- daily.totals %>% group_by(date) %>% summarize(total = sum(steps)
 hist(daily.totals$total, breaks=20)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 ```r
 total.steps.mean <- mean(daily.totals$total, na.rm = TRUE)
@@ -56,7 +61,7 @@ interval <- interval %>% group_by( interval ) %>% summarize( avgsteps = mean(ste
 plot( interval, type = "l")
 ```
 
-![](PA1_template_files/figure-html/dailyactivity-1.png) 
+![plot of chunk dailyactivity](figure/dailyactivity-1.png) 
 
 ```r
 max.steps <- max( interval$avgsteps )
@@ -99,7 +104,7 @@ daily.totals.clean <- daily.totals.clean %>% group_by(date) %>% summarize(total 
 hist(daily.totals.clean$total, breaks=20)
 ```
 
-![](PA1_template_files/figure-html/subvalues-1.png) 
+![plot of chunk subvalues](figure/subvalues-1.png) 
 
 ```r
 total.steps.clean.mean <- mean(daily.totals.clean$total, na.rm = TRUE)
@@ -120,7 +125,7 @@ hist(daily.totals$total, breaks=20)
 hist(daily.totals.clean$total, breaks=20)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -157,7 +162,7 @@ plot( interval.weekday, type = "l", main="Weekday", col="blue", xaxt="n", xlab="
 plot( interval.weekend, type = "l", main="Weekend", col="blue", xlab="Interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 As can be seen there is a significant difference in activity the average activity patern between weekdays and weekends.
 
